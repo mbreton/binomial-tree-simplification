@@ -2,7 +2,7 @@ var vertx = require('vertx');
 var console = require('vertx/console');
 
 vertx.createHttpServer().requestHandler(function(req) {
-    if (req.path() == '/'){
+    if (req.path() == '/price'){
         var K, R, S, U, expiration;
         req.params().forEach(function(key, value) {
             //S=&K=&u=&R=&expiration=
