@@ -18,17 +18,17 @@ vertx.createHttpServer().requestHandler(function(req) {
             for (var i = n-k+1; i <= n; i++) coeff *= i;
             for (var i = 1;     i <= k; i++) coeff /= i;
             return coeff;
-        }
+        };
 
         var d = 1 / U;
         var q = (R - d) / (U - d);
 
         var func = function (_expiration, _K, _q, _S, _U){
-            var r = binom(_expiration, _K) * Math.pow(_q,_expiration-_K) * Math.pow(1-_q,_K) * (_S * Math.pow(_U, _K) * Math.pow(d, _expiration - _K));
-            if (_K <= _expiration){
-                return r + func(_expiration, _K+1, _q, _S, _U);
+            var r = binom(_expiration, _K) * Math.pow(_q,_expiration-_K) * Math.pow(1-_q,_K) * (_S * Math.pow(_U, _expiration-_K) * Math.pow(d, _K));
+            if (_K == _expiration){
+                return Math.max(0, _S - r)//r + func(_expiration, _K+1, _q, _S, _U);
             } else{
-                return r;
+                return r + func(_expiration,_K+1,_q,_S,_U);
             }
         };
 
