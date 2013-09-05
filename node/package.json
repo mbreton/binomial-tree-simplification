@@ -1,0 +1,8 @@
+{
+  "name": "Binomial-tree-simplification",
+  "description": "Binomail tree simplification",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*"
+  }
+}
