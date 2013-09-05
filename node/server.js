@@ -40,7 +40,7 @@ var recusiveSum = function (n, k, q, s, u, d){
     } else{
         result = r + recusiveSum(n, k+1, q, s, u, d);
     }
-    console.log("When k="+k+" result is equal to "+r);
+    console.log("When k="+k+" result is equal to "+result);
     return result;
 };
 
