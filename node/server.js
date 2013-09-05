@@ -24,8 +24,8 @@ app.get('/price', function(req, res) {
 
         console.log('d='+d+' q='+q);
 
-        var result = 1/Math.pow(r, n) * recusiveSum(n, 0, q, s, u);
-        var roundedResult = Math.round(result * 100) / 100;
+        var result = 1/Math.pow(r, n) * recusiveSum(n, 0, q, s, u, d);
+        var roundedResult = Math.round(result * 100) / 100 + "";
         console.log(roundedResult)
 
         res.end(roundedResult);
