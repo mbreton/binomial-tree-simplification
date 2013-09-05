@@ -12,8 +12,6 @@ app.get('/price', function(req, res) {
         u = +req.query.U,          // coef used to determinate the next value of S for the two sub-nodes
         n = +req.query.expiration; // number of unit time (month for example) which define the tree depth
 
-    console.log(req.query);
-
     var values= "S="+s+" K="+k+" R="+r+" U="+u+" N="+n;
     console.log(values);
 
